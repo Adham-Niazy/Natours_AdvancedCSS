@@ -1,0 +1,30 @@
+
+.header-section {
+    position: relative;
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba($light-primary-color,0.8),rgba($dark-primary-color,0.8)) , url(../imgs/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    -webkit-clip-path: polygon(0 0,100% 0,100% 75vh,0 100%);
+    clip-path: polygon(0 0,100% 0,100% 75vh,0 100%);
+    @include respond(port-tab) {
+        clip-path: polygon(0 0,100% 0,100% 84vh,0 100%);
+        -webkit-clip-path: polygon(0 0,100% 0,100% 84vh,0 100%);
+    }
+    @include respond(phone) {
+        clip-path: polygon(0 0,100% 0,100% 85vh,0 100%);
+        -webkit-clip-path: polygon(0 0,100% 0,100% 85vh,0 100%);
+    }
+}
+.logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+.logo {
+    height: 3.5rem;
+}
+.flod {
+    @include centerXY;
+    text-align: center;
+}

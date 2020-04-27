@@ -1,0 +1,66 @@
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $dark-grey;
+    padding: 3rem;
+    @include respond(port-tab) {
+        padding: 0;
+
+    }
+}
+.heading{
+    color: $white-color;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+    
+    &-main{
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation: fadeInLeft 1s ease;
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-size: 5rem;
+        }
+    }
+    &-sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.74rem;
+        animation: fadeInRight 1s ease;
+        @include respond(phone) {
+            letter-spacing: .5rem;
+        }
+    }
+}
+.heading-secondary {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-image: linear-gradient(to right,$light-primary-color,$dark-primary-color);
+    display: inline-block;
+    -webkit-background-clip: text;
+    color: transparent;
+    @include respond(port-tab) {
+        font-size: 3rem;
+    }
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
+}
+.heading-tertiary {
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.paragraph {
+    font-size: 1.5rem;
+    font-weight: 700;
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}

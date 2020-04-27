@@ -1,0 +1,68 @@
+.story {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color: #000000, $alpha: .15);
+    background-color: rgba($color: $white-color, $alpha: .5);
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+
+    @include respond(port-tab) {
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+    }
+    @include respond(phone) {
+        transform: skewX(0);
+    }
+    &-shape {
+        overflow: hidden;
+        margin-bottom: 1rem;
+        width: 15rem; // IMPORTANT TO SHAPE
+        height: 15rem; // IMPORTANT TO SHAPE
+        float: left; // IMPORTANT TO SHAPE
+        -webkit-shape-outside: circle(50% at 50% 50%); // for SAFARII
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg);
+        position: relative;
+        @include respond(phone) {
+            transform: translateX(-3rem) skewX(0);
+        }
+    }
+    &-img {
+        height: 100%;
+        transform: translateX(-17%) scale(1.4);
+        transition: all .4s ease;
+    }
+    &-text {
+        transform: skewX(12deg);
+        @include respond(phone) {
+            transform:  skewX(0);
+        }
+    }
+    &-caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% ,20%);
+        text-transform: uppercase;
+        color: $white-color;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s ease;
+        backface-visibility: hidden;
+    }
+    &:hover &-caption {
+        transform: translate(-50% ,-50%);
+        opacity: 1;
+    }
+    &:hover &-img {
+        transform: translateX(-17%) scale(1);
+        filter: blur(3px) brightness(80%);
+    }
+}

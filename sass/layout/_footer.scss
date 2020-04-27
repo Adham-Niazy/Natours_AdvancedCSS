@@ -1,0 +1,66 @@
+.footer {
+    background-color: #333;
+    padding: 10rem 0;
+    @include respond(port-tab) {
+        padding: 8rem 0;
+    }
+    &-logo-box {
+        text-align: center;
+    }
+    &-logo {
+        width: 15rem;
+        height: auto;
+    }
+    &-navigation {
+        border-top: 1px solid #777;
+        padding-top: 2rem;
+        display: inline-block;
+        transform: translateX(-5rem);
+        @include respond(port-tab) {
+            width: 100%;
+            text-align: center;
+            transform: translateX(0);
+        }
+    }
+    &-list {
+        list-style: none;
+        
+    }
+    &-item {
+        display: inline-block;
+        font-size: 1.4rem;
+        &:not(:last-child) {
+            margin-right: 1.5rem;
+            
+        }
+    }
+    &-link {
+        &:link,
+        &:visited {
+            color: #f7f7f7;
+            background-color: #333;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: all .3s ease;
+        }
+        &:hover {
+            color: $primary-color;
+            box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: .4);
+            transform: rotate(5deg) scale(1.3);
+        }
+    }   
+    &-copyright {
+        width: 80%;
+        text-align: start;
+        color: #f7f7f7;
+        font-size: 1.4rem;
+        float: right;
+        border-top: 1px solid #777;
+        padding-top: 2rem;
+        @include respond(port-tab) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}

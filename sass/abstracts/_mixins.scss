@@ -1,0 +1,48 @@
+// MIXINS
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+@mixin centerXY {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+// BREAK POINTS
+/* 
+0-600px : PHONE 
+600-900px : Tablet portrait
+900-1200px : Tablet Landscape
+1200-1800 : OUR STANDERD STYLE
+1800px + : BIG SCREENS
+
+
+
+$breakpoints choice
+- phone
+- port-tab
+- land-tab
+- big-screen
+
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: $phone-range) {@content};
+    }
+    @if $breakpoint == port-tab {
+        @media (max-width: $port-tab-range) {@content};
+    }
+    @if $breakpoint == land-tab {
+        @media (max-width: $land-tab-range) {@content};
+    }
+    @if $breakpoint == big-screen {
+        @media (min-width: $big-screens-range) {@content};
+    }
+}

@@ -1,0 +1,22 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%; /* for Changing default browser font size */ 
+    
+    @include respond(land-tab) {
+        font-size: 56.25%; // 1rem = 9px Because 9/16 is 56.25%
+    }
+    @include respond(port-tab) {
+        font-size: 50%; // 1rem = 8px Because 8/16 is 50%
+    }
+    @include respond(big-screen) {
+        font-size: 75%; // 1rem = 8px Because 12/16 is 75%
+    }
+}
+body {
+    box-sizing: border-box;
+}
